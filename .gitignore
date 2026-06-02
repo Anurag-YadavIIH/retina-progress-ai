@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment (never commit this — it's hundreds of MB)
+venv/
+env/
+.venv/
+
+# Data (too large for Git — use Google Drive or DVC instead)
+data/raw/
+data/processed/
+
+# Model weights (large binary files)
+outputs/
+*.pth
+*.pt
+*.ckpt
+*.h5
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Logs
+*.log
+runs/
+lightning_logs/
+
+# Secrets (never commit API keys or credentials)
+.env
+secrets.yaml

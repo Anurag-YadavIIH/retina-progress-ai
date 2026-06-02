@@ -1,0 +1,45 @@
+# configs/config.yaml
+
+project:
+  name: "RetinaProgressAI"
+  version: "0.1.0"
+
+paths:
+  data_root: "data/"
+  raw_data: "data/raw/"
+  processed_data: "data/processed/"
+  outputs: "outputs/"
+  checkpoints: "outputs/checkpoints/"
+
+# Vessel Segmentation (Phase 5)
+vessel_seg:
+  dataset: "DRIVE"
+  image_size: 512
+  batch_size: 4
+  epochs: 100
+  learning_rate: 0.001
+  encoder: "resnet34"
+  device: "cuda"   # change to "cpu" if no GPU
+
+# Optic Disc/Cup Segmentation (Phase 6)
+disc_seg:
+  dataset: "REFUGE"
+  image_size: 512
+  batch_size: 4
+  epochs: 80
+  learning_rate: 0.0005
+
+# Lesion Segmentation (Phase 7)
+lesion_seg:
+  dataset: "IDRiD"
+  image_size: 640
+  batch_size: 2
+  epochs: 120
+  learning_rate: 0.0003
+
+# Biomarker thresholds (Phase 8-9)
+biomarkers:
+  cdr_glaucoma_threshold: 0.65
+  cdr_suspicious_threshold: 0.50
+  vessel_density_change_threshold: 0.05
+  lesion_growth_threshold: 0.10

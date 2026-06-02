@@ -1,0 +1,41 @@
+# ── Deep Learning ──────────────────────────────────────────────
+torch==2.7.1                  # PyTorch: builds and trains neural networks (U-Net, etc.)
+torchvision==0.22.0           # Image datasets, transforms, pretrained models
+torchaudio==2.7.1             # Not directly used but installed with torch for compatibility
+
+# ── Computer Vision & Image Processing ─────────────────────────
+opencv-python==4.9.0.80       # OpenCV: CLAHE, morphological ops, vessel analysis
+Pillow==10.3.0                # PIL: image loading and saving (PNG, JPEG, TIFF)
+scikit-image==0.23.2          # skimage: connected components, region props, skeleton analysis
+albumentations==1.4.4         # Fast augmentation library: flips, rotations, color jitter
+
+# ── Scientific Computing ────────────────────────────────────────
+numpy==1.26.4                 # N-dimensional arrays: the backbone of all image data
+scipy==1.13.0                 # Signal processing, distance transforms, morphology
+scikit-learn==1.4.2           # Metrics (ROC-AUC), preprocessing utilities
+pandas==2.2.2                 # DataFrames: managing patient metadata and biomarker tables
+
+# ── Visualization ───────────────────────────────────────────────
+matplotlib==3.8.4             # Plotting: loss curves, segmentation overlays, comparisons
+seaborn==0.13.2               # Statistical plots: biomarker distribution charts
+
+# ── Model Zoo ──────────────────────────────────────────────────
+segmentation-models-pytorch==0.3.3  # Pre-built U-Net, U-Net++, DeepLabV3+ with encoders
+timm==0.9.2                         # Pretrained backbones: ResNet, EfficientNet, Swin Transformer
+
+# ── Training Utilities ──────────────────────────────────────────
+tqdm==4.66.4                  # Progress bars for training loops
+tensorboard==2.16.2           # Training dashboard: loss curves, image previews
+pyyaml==6.0.1                 # Load YAML config files (hyperparameters, paths)
+
+# ── Report Generation ───────────────────────────────────────────
+reportlab==4.1.0              # Generate PDF clinical reports programmatically
+
+# ── Backend API ─────────────────────────────────────────────────
+fastapi==0.111.0              # The web framework for our dashboard backend
+uvicorn==0.29.0               # ASGI server that runs FastAPI
+python-multipart==0.0.9       # Handles file uploads in FastAPI
+
+# ── Development ─────────────────────────────────────────────────
+jupyter==1.0.0                # Jupyter notebook server for exploration
+ipykernel==6.29.4             # Connects notebooks to our venv Python kernel
