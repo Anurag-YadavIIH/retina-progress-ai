@@ -4,6 +4,13 @@ project:
   name: "RetinaProgressAI"
   version: "0.1.0"
 
+# Global runtime settings shared by training, inference and the API.
+runtime:
+  # "auto" resolves to CUDA if a GPU is present, else Apple Silicon MPS,
+  # else CPU. Use src.utils.get_device(config["runtime"]["device"]) to read it.
+  # Can be overridden with "cpu", "cuda" or "mps".
+  device: "auto"
+
 paths:
   data_root: "data/"
   raw_data: "data/raw/"
@@ -19,7 +26,7 @@ vessel_seg:
   epochs: 100
   learning_rate: 0.001
   encoder: "resnet34"
-  device: "cuda"   # change to "cpu" if no GPU
+  # Device is taken from runtime.device (auto-detected). No hard-coded "cuda".
 
 # Optic Disc/Cup Segmentation (Phase 6)
 disc_seg:
